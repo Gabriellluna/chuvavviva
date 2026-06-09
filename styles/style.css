@@ -1055,7 +1055,7 @@ button {
     }
 
     p {
-        color: var(--color-grey);
+        color: var(--bg-white);
         font-weight: 800;
     }
 }
@@ -1153,6 +1153,10 @@ form {
         padding: var(--p-15) 0;
 
     }
+
+    *{
+        font-family: Inter;
+    }
 }
 
 .questions {
@@ -1167,6 +1171,10 @@ form {
     align-items: center;
     gap: var(--p-15);
     margin-bottom: var(--p-15);
+}
+
+.question-label{
+    color: var(--bg-primary-color);
 }
 
 .slideShow {
@@ -1290,14 +1298,14 @@ form {
 
 .successMessage {
     padding: 20px;
-    border: 2px solid;
-    border-radius: 8px;
-    color: #2E7D32;
+    border: calc(var(--p-border) * 2) solid var(--successMessage100);
+    border-radius: var(--p-8);
+    color: var(--successMessage100);
     margin: var(--p-15) 0;
     animation: flutuarVerde 0.6s ease-out forwards;
 
     h4 {
-        color: var(--bg-primary-color);
+        color: var(--successMessage100);
     }
 }
 
@@ -1315,7 +1323,7 @@ form {
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 5px;
+    padding: var(--p-5);
     border-radius: var(--p-5);
 
     p {
@@ -1339,6 +1347,62 @@ form {
     }
 }
 
+#contact{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--bg-light-grey);
+}
+
+.contact{
+    width: 60%;
+    background: var(--bg-white);
+    padding: var(--p-15);
+    border-radius: var(--p-15);
+    border: var(--p-border) solid var(--color-grey);
+    gap: var(--p-20);
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    img{
+        max-width: calc(var(--p-100) * 2);
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-around;
+        input, label, select, textarea{
+            width: 90%;
+        }
+        label, select, textarea{
+            color: var(--bg-primary-color);
+        }
+        input, select, textarea{
+            height: calc(var(--p-30) + var(--p-10));
+            border-radius: var(--p-15);
+            border: var(--p-border) solid var(--bg-primary-color);
+            padding: var(--p-5);
+        }
+        textarea{
+            height: var(--p-100);
+            margin: 0 auto var(--p-20) auto;
+            padding: var(--p-15);
+        }
+    }
+}
 
 @media(max-width: 1199px) {
     .text {
@@ -1402,6 +1466,12 @@ form {
     footer {
         flex-wrap: wrap;
     }
+
+    .column{
+        img{
+            max-width: var(--p-100);
+        }
+    }
 }
 
 @media(max-width: 991px) {
@@ -1444,6 +1514,15 @@ form {
         max-width: 100% !important;
         margin-bottom: var(--p-20);
     }
+
+    #contact{
+        flex-direction: column;
+        .contact, .column{
+            width: 100%;
+            margin: var(--p-10);
+        }
+    }
+    
 }
 
 
@@ -1500,7 +1579,7 @@ form {
 
     .footer-section {
         min-width: 100%;
-        padding: var(--p-20);
+        padding: var(--p-20) 0;
         align-items: start;
     }
 
@@ -1521,6 +1600,15 @@ form {
     .text {
         p {
             font-size: var(--p-15);
+        }
+    }
+
+    .row{
+        flex-direction: column;
+        div{
+            input, label, select{
+                width: 100%;
+            }
         }
     }
 }
