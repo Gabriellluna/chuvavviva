@@ -43,7 +43,7 @@ const selectCanal = document.querySelector("#canal")
 const selectPopulacao = document.querySelector("#populacao")
 const textareaMensagem = document.querySelector("#mensagem")
 
-const limparForm = () =>{
+const limparForm = () => {
     inputNome.value = ''
     inputOccupation.value = ''
     inputOrganization.value = ''
@@ -293,7 +293,7 @@ phone.addEventListener('input', () => {
     phone.value = telefone
 })
 
-submitForm.addEventListener('submit', (e) =>{
+submitForm.addEventListener('submit', (e) => {
     e.preventDefault()
     successMessageBox.classList.remove("d-none")
     limparForm()
@@ -305,27 +305,37 @@ menuButton.addEventListener("click", () => {
 })
 
 row1Item1.addEventListener("click", () => {
-    row1Item1.classList.toggle("col-lg-8")
-    row1Item1.classList.toggle("style")
+    if (window.innerWidth > 850) {
+        row1Item1.classList.toggle("col-lg-8")
+        row1Item1.classList.toggle("style")
+    }
 })
 row1Item2.addEventListener("click", () => {
-    row1Item2.classList.toggle("col-lg-8")
-    row1Item2.classList.toggle("style")
+    if (window.innerWidth > 850) {
+        row1Item2.classList.toggle("col-lg-8")
+        row1Item2.classList.toggle("style")
+    }
 })
 
 row2Item1.addEventListener("click", () => {
-    row2Item1.classList.toggle("col-lg-6")
-    row2Item1.classList.toggle("style")
+    if (window.innerWidth > 850) {
+        row2Item1.classList.toggle("col-lg-6")
+        row2Item1.classList.toggle("style")
+    }
 })
 
 row2Item2.addEventListener("click", () => {
-    row2Item2.classList.toggle("col-lg-6")
-    row2Item2.classList.toggle("style")
+    if (window.innerWidth > 850) {
+        row2Item2.classList.toggle("col-lg-6")
+        row2Item2.classList.toggle("style")
+    }
 })
 
 row2Item3.addEventListener("click", () => {
-    row2Item3.classList.toggle("col-lg-6")
-    row2Item3.classList.toggle("style")
+    if (window.innerWidth > 850) {
+        row2Item3.classList.toggle("col-lg-6")
+        row2Item3.classList.toggle("style")
+    }
 })
 
 const verifyBlank = () => {
