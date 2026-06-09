@@ -252,15 +252,28 @@ section {
     right: var(--p-30);
 
     img {
-        max-height: 40px;
-        max-width: 40px;
-        padding: 5px;
+        max-height: calc(var(--p-50) - var(--p-10));
+        max-width: calc(var(--p-50) - var(--p-10));
+        padding: var(--p-5);
     }
 }
 
 .activeLink {
     color: var(--bg-light-blue) !important;
     font-weight: bold;
+    position: relative;
+}
+
+.activeLink::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: var(--p-2);
+    border-radius: var(--p-10);
+    background: var(--bg-light-blue);
+    bottom: calc(var(--p-2) * -1);
+    left: 0;
+    right: 0;
 }
 
 .active {
@@ -301,7 +314,7 @@ section {
         width: 100%;
         margin: 0;
         justify-content: center;
-        margin-top: -2px;
+        margin-top: calc(var(--p-2) * -1);
         transform: rotate(45deg);
     }
 
@@ -1207,7 +1220,6 @@ form {
     padding-right: var(--p-10);
 
     div {
-        background-color: blueviolet;
         text-align: center;
         display: flex;
         justify-content: center;
@@ -1292,12 +1304,12 @@ form {
     animation: flutuar .8s ease-in-out;
 
     h4 {
-        color: white;
+        color: var(--bg-white);
     }
 }
 
 .successMessage {
-    padding: 20px;
+    padding: var(--p-20);
     border: calc(var(--p-border) * 2) solid var(--successMessage100);
     border-radius: var(--p-8);
     color: var(--successMessage100);
@@ -1338,7 +1350,7 @@ form {
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 5px;
+    padding: var(--p-5);
     border-radius: var(--p-5);
 
     p {
@@ -1545,7 +1557,7 @@ form {
     }
 
     .aplicacao-image {
-        height: 3var(--p-50);
+        height: var(--p-50);
     }
 
     .beneficios-row1,
