@@ -26,6 +26,37 @@ const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-hero-menu a");
 const theme = document.querySelector(".theme")
 const themeImage = document.querySelector("#themeImage")
+const submitForm = document.querySelector("#formContact")
+const phone = document.querySelector("#telefone")
+const successMessageBox = document.querySelector("#successBox")
+const formContact = document.querySelector("#formContact")
+
+const inputNome = document.querySelector("#nome")
+const inputOccupation = document.querySelector("#occupation")
+const inputOrganization = document.querySelector("#organization")
+const selectBuyer = document.querySelector("#buyer")
+const selectEstado = document.querySelector("#estado")
+const selectRisco = document.querySelector("#risco")
+const inputTelefone = document.querySelector("#telefone")
+const inputEmail = document.querySelector("#email")
+const selectCanal = document.querySelector("#canal")
+const selectPopulacao = document.querySelector("#populacao")
+const textareaMensagem = document.querySelector("#mensagem")
+
+const limparForm = () =>{
+    inputNome.value = ''
+    inputOccupation.value = ''
+    inputOrganization.value = ''
+    selectBuyer.value = ''
+    selectEstado.value = ''
+    selectRisco.value = ''
+    inputTelefone.value = ''
+    inputEmail.value = ''
+    selectCanal.value = ''
+    selectPopulacao.value = ''
+    textareaMensagem.value = ''
+}
+
 let currentQuestion = 1
 let corretas = 0
 let enviado = false
@@ -240,6 +271,33 @@ const answers = {
     },
 }
 
+phone.addEventListener('input', () => {
+    let telefone = phone.value.replace(/\D/g, '')
+
+    if (telefone.length <= 10) {
+        telefone = telefone.replace(/(\d{0,2})(\d{0,4})(\d{0,4})/, (_, ddd, parte1, parte2) => {
+            if (!ddd) return ''
+            if (!parte1) return `(${ddd}`
+            if (!parte2) return `(${ddd}) ${parte1}`
+            return `(${ddd}) ${parte1}-${parte2}`
+        })
+    } else {
+        telefone = telefone.replace(/(\d{0,2})(\d{0,5})(\d{0,4})/, (_, ddd, parte1, parte2) => {
+            if (!ddd) return ''
+            if (!parte1) return `(${ddd}`
+            if (!parte2) return `(${ddd}) ${parte1}`
+            return `(${ddd}) ${parte1}-${parte2}`
+        })
+    }
+
+    phone.value = telefone
+})
+
+submitForm.addEventListener('submit', (e) =>{
+    e.preventDefault()
+    successMessageBox.classList.remove("d-none")
+    limparForm()
+})
 
 menuButton.addEventListener("click", () => {
     mobileMenu.classList.toggle("active")
@@ -269,13 +327,6 @@ row2Item3.addEventListener("click", () => {
     row2Item3.classList.toggle("col-lg-6")
     row2Item3.classList.toggle("style")
 })
-
-question.textContent = questions[1].pergunta
-option1.textContent = questions[1].opcoes[0]
-option2.textContent = questions[1].opcoes[1]
-option3.textContent = questions[1].opcoes[2]
-option4.textContent = questions[1].opcoes[3]
-prev.classList.add("d-none")
 
 const verifyBlank = () => {
     if (document.querySelector('input[name="option"]:checked') === null) {
@@ -340,6 +391,8 @@ const updateInfo = () => {
         }
     }
 }
+
+updateInfo()
 
 const clearQuestions = () => {
     questionColor.forEach(element => {
