@@ -14,7 +14,7 @@
         <header class="header-nav">
             <a href="#top">
                 <div class="header-logo">
-                    <img src="./images/logo.png" alt="logo ChuvaViva">
+                    <img src="./images/logo.png" alt="Logotipo da plataforma ChuvaViva">
                     <p>Chuva<span>Viva</span></p>
                 </div>
             </a>
@@ -27,16 +27,16 @@
                     <li><a href="#beneficios"><span class="number">05</span> Benefícios</a></li>
                     <li><a href="#aplicacao"><span class="number">06</span> Aplicação</a></li>
                 </ul>
-                <button id="menuButton" class="nav-mobile-menu">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </button>
             </nav>
+            <button id="menuButton" class="nav-mobile-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
             <div class="mobile-menu">
                 <div>
                     <a href="#top">
-                        <img src="./images/logo.png" alt="logo ChuvaViva">
+                        <img src="./images/logo.png" alt="Logotipo da plataforma ChuvaViva">
                     </a>
                 </div>
                 <ul class="nav-hero-menu">
@@ -535,7 +535,7 @@
             <div class="alertMessage d-none">
                 <h4>Insira uma resposta para continuar</h4>
             </div>
-            <label id="label">Qual a opção correta?</label>
+            <label class="question-label" id="label">Qual a opção correta?</label>
             <div class="questions">
                 <div class="question">
                     <p id="option1"></p>
@@ -556,7 +556,7 @@
 
             </div>
             <div class="explanations d-none">
-                <p id="explanation">sua explicação aqui</p>
+                <p id="explanation"></p>
             </div>
         </form>
         <div class="buttons" id="buttons">
@@ -580,11 +580,141 @@
 
     </section>
 
+    <section id="contact">
+        <div class="column">
+            <h1 class="form-title">Entre em contato com nosso time!</h1>
+            <img src="./images/logo.png" alt="Logotipo da plataforma ChuvaViva">
+        </div>
+        <form class="contact" id="formContact">
+            <div class="row">
+                <div>
+                    <label for="nome">Nome Completo:</label>
+                    <input required type="text" id="nome" placeholder="Ex: Gabriel Luna Maia">
+                </div>
+                <div>
+                    <label for="occupation">Cargo / Função:</label>
+                    <input required type="text" id="occupation" placeholder="Ex: Analista de Segurança">
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <label for="organization">Organização:</label>
+                    <input type="text" id="organization" placeholder="Ex: Prefeitura de São Paulo">
+                </div>
+                <div>
+                    <label for="buyer">Tipo de contratante:</label>
+                    <select required id="buyer">
+                        <option value="">Selecione...</option>
+                        <option value="prefeitura">Prefeitura municipal</option>
+                        <option value="estado">Governo estadual</option>
+                        <option value="defesa">Órgão de Defesa Civil</option>
+                        <option value="empresa">Empresa privada</option>
+                        <option value="ong">ONG / Instituto</option>
+                        <option value="imprensa">Imprensa / pesquisa</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <label for="estado">Estado:</label>
+                    <select required id="estado">
+                        <option value="">Selecione...</option>
+                        <option>AC</option>
+                        <option>AL</option>
+                        <option>AM</option>
+                        <option>AP</option>
+                        <option>BA</option>
+                        <option>CE</option>
+                        <option>DF</option>
+                        <option>ES</option>
+                        <option>GO</option>
+                        <option>MA</option>
+                        <option>MG</option>
+                        <option>MS</option>
+                        <option>MT</option>
+                        <option>PA</option>
+                        <option>PB</option>
+                        <option>PE</option>
+                        <option>PI</option>
+                        <option>PR</option>
+                        <option>RJ</option>
+                        <option>RN</option>
+                        <option>RO</option>
+                        <option>RR</option>
+                        <option>RS</option>
+                        <option>SC</option>
+                        <option>SE</option>
+                        <option>SP</option>
+                        <option>TO</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="risco">Risco predominante:</label>
+                    <select required id="risco">
+                        <option value="">Selecione...</option>
+                        <option value="enchente">Enchentes</option>
+                        <option value="deslizamento">Deslizamentos</option>
+                        <option value="ambos">Ambos</option>
+                        <option value="nao-sei">Não sei informar</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <label for="telefone">Telefone / WhatsApp:</label>
+                    <input required type="tel" id="telefone" placeholder="(11) 99999-9999" maxlength="15">
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input required type="email" id="email" placeholder="seu_email@gmail.com">
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <label for="canal">Melhor canal de retorno:</label>
+                    <select id="canal">
+                        <option value="">Selecione...</option>
+                        <option value="email">E-mail</option>
+                        <option value="telefone">Telefone</option>
+                        <option value="whatsapp">WhatsApp</option>
+                        <option value="videochamada">Videochamada</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="populacao">População:</label>
+                    <select id="populacao">
+                        <option value="">Selecione...</option>
+                        <option value="pequeno">Até 50 mil hab.</option>
+                        <option value="medio">50 mil - 200 mil hab.</option>
+                        <option value="grande">200 mil - 1 milhão hab.</option>
+                        <option value="metropole">Acima de 1 milhão hab.</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="full">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" maxlength="400"
+                        placeholder="Descreva brevemente sua necessidade ou o contexto do seu município..."></textarea>
+                </div>
+            </div>
+
+            <div class="successMessage d-none" id="successBox">
+                <h4>Solicitação enviada! Nossa equipe entrará em contato em breve.</h4>
+            </div>
+            <button type="submit" class="btn">Solicitar contato</button>
+        </form>
+    </section>
     <Footer>
         <div class="footer-section">
             <a href="#top">
                 <div class="footer-logo">
-                    <img src="./images/logo.png" alt="logo ChuvaViva">
+                    <img src="./images/logo.png" alt="Logotipo da plataforma ChuvaViva">
                     <p>Chuva<span>Viva</span></p>
                 </div>
             </a>
